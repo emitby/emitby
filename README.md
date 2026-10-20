@@ -1,6 +1,6 @@
 ## Edward Mitby, MS
 
-Senior AI Engineer in New York building **agentic workflows**: LLM-powered agents that plan, use tools and carry out multi-step work. My background is in systematic macro investing and machine learning for financial markets.
+Senior AI Engineer building **agentic workflows**: LLM-powered agents that plan, use tools and carry out multi-step work. My background is in systematic macro investing and machine learning for financial markets.
 
 ### Focus areas
 
