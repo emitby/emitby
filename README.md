@@ -23,6 +23,11 @@ Senior AI Engineer building **agentic workflows**: LLM-powered agents that plan,
 
 Python · Claude / Anthropic API · PyTorch · TensorFlow · scikit-learn · pandas · FastAPI · AWS
 
+### Recent activity
+
+<!-- contributions:start -->
+<!-- contributions:end -->
+
 ### Connect
 
 [LinkedIn](https://www.linkedin.com/in/edwardmitby)
