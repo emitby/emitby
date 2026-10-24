@@ -36,7 +36,9 @@ def test_svg_is_valid_and_has_one_cell_per_day(theme):
     assert len(day_cells) == len(days)
     assert set(r.get("fill") for r in day_cells) == set(cc.THEMES[theme]["cells"])
     texts = [t.text for t in root.iter(f"{ns}text")]
-    assert "Aug" in texts and "Sep" in texts and "Oct" in texts
+    assert "Sep" in texts and "Oct" in texts
+    assert "Aug" not in texts          # Aug 24 sits one column before Sep 1: too close to label
+    assert int(root.get("width")) >= cc.MIN_WIDTH
     assert "Less" in texts and "More" in texts
     assert f"{sum(d['count'] for d in days)} contributions in the last 2 months" in texts
 

@@ -69,6 +69,7 @@ THEMES = {
 CELL, GAP = 11, 3
 PITCH = CELL + GAP
 LEFT, TOP = 34, 50          # room for weekday labels, and for the title and month labels
+MIN_WIDTH = 360             # wide enough for "1,234 contributions in the last 2 months"
 FONT = "-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif"
 
 
@@ -130,6 +131,23 @@ def summary(days):
             f"({first:%b} {first.day}, {first.year} to {last:%b} {last.day}, {last.year})")
 
 
+def month_labels(days, week0):
+    """Where to write month names: ``[(column, "Aug"), ...]``.
+
+    A label goes over the first column, and over each column that holds a month's 1st day.
+    A three-letter name needs about 3 columns of room, so when the partial first month's
+    label would run into the next month's, the partial one is dropped. GitHub's chart
+    does the same.
+    """
+    labels = []
+    for d in days:
+        if d is days[0] or d["date"].day == 1:
+            labels.append(((d["date"] - week0).days // 7, f'{d["date"]:%b}'))
+    if len(labels) > 1 and labels[1][0] - labels[0][0] < 3:
+        labels.pop(0)
+    return labels
+
+
 def render_svg(days, theme):
     """Draw the chart as a standalone SVG string.
 
@@ -149,7 +167,9 @@ def render_svg(days, theme):
     first = days[0]["date"]
     week0 = first - dt.timedelta(days=(first.weekday() + 1) % 7)   # the Sunday on or before the first day
     columns = (days[-1]["date"] - week0).days // 7 + 1
-    width = LEFT + columns * PITCH + 12
+    # Two months is only about 9 weeks of columns, narrower than the title, so the
+    # canvas is never narrower than MIN_WIDTH.
+    width = max(LEFT + columns * PITCH + 12, MIN_WIDTH)
     height = TOP + 7 * PITCH + 34
     total = sum(d["count"] for d in days)
     title = summary(days)
@@ -164,15 +184,8 @@ def render_svg(days, theme):
         f'<text x="{LEFT}" y="20" font-size="14" font-weight="600" fill="{t["text"]}">'
         f'{_plural(total, "contribution")} in the last {MONTHS} months</text>',
     ]
-    # Month labels: at the first column, and at each column that holds a month's 1st day.
-    seen = set()
-    for d in days:
-        col = (d["date"] - week0).days // 7
-        key = (d["date"].year, d["date"].month)
-        if key not in seen and (d["date"].day == 1 or d is days[0]):
-            seen.add(key)
-            parts.append(f'<text x="{LEFT + col * PITCH}" y="{TOP - 8}" font-size="10" fill="{t["muted"]}">'
-                         f'{d["date"]:%b}</text>')
+    for col, name in month_labels(days, week0):
+        parts.append(f'<text x="{LEFT + col * PITCH}" y="{TOP - 8}" font-size="10" fill="{t["muted"]}">{name}</text>')
     # Weekday labels on rows 1, 3 and 5 (Mon, Wed, Fri), as GitHub does.
     for row, name in ((1, "Mon"), (3, "Wed"), (5, "Fri")):
         parts.append(f'<text x="{LEFT - 6}" y="{TOP + row * PITCH + CELL - 2}" font-size="9" '
@@ -183,9 +196,10 @@ def render_svg(days, theme):
         tip = f'{d["date"]:%b} {d["date"].day}, {d["date"].year}: {_plural(d["count"], "contribution")}'
         parts.append(f'<rect x="{x}" y="{y}" width="{CELL}" height="{CELL}" rx="2" '
                      f'fill="{t["cells"][d["level"]]}"><title>{tip}</title></rect>')
-    # Legend, right-aligned under the grid.
+    # Legend under the grid, its swatches ending at the grid's right edge (as on GitHub),
+    # so it stays next to the data even when the title makes the canvas wider.
     ly = TOP + 7 * PITCH + 12
-    lx = width - 12 - 5 * PITCH - 28
+    lx = LEFT + columns * PITCH - 5 * PITCH
     parts.append(f'<text x="{lx - 6}" y="{ly + CELL - 2}" font-size="9" text-anchor="end" fill="{t["muted"]}">Less</text>')
     for i, color in enumerate(t["cells"]):
         parts.append(f'<rect x="{lx + i * PITCH}" y="{ly}" width="{CELL}" height="{CELL}" rx="2" fill="{color}"/>')
