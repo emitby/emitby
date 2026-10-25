@@ -4,9 +4,9 @@ Senior AI Engineer building **agentic workflows**: LLM-powered agents that plan,
 
 ### Focus areas
 
-- **Agentic workflows**: multi-step agents, tool use and orchestration
-- **Applied machine learning**: deep learning, NLP and model evaluation
-- **Quantitative finance**: signal research, factor modeling, portfolio construction and backtesting
+- **Agentic workflows**: multi-step agents, tool use, and orchestration
+- **Applied machine learning**: data scrubbing, ensemble modeling, XGBoost, ML for forecasting
+- **Quantitative finance**: signal research, factor modeling, portfolio construction, and backtesting
 
 ### Featured agentic projects
 
