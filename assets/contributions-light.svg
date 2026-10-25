@@ -1,15 +1,14 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="360" height="182" viewBox="0 0 360 182" role="img" aria-labelledby="t d">
-<title id="t">46 contributions in the last 2 months (Aug 24, 2026 to Oct 24, 2026)</title>
+<title id="t">67 contributions in the last 2 months (Aug 25, 2026 to Oct 25, 2026)</title>
 <desc id="d">A calendar heatmap with one square per day; darker green means more contributions.</desc>
 <rect width="360" height="182" rx="6" fill="#ffffff"/>
 <g font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Noto Sans', Helvetica, Arial, sans-serif">
-<text x="34" y="20" font-size="14" font-weight="600" fill="#1f2328">46 contributions in the last 2 months</text>
+<text x="34" y="20" font-size="14" font-weight="600" fill="#1f2328">67 contributions in the last 2 months</text>
 <text x="48" y="42" font-size="10" fill="#59636e">Sep</text>
 <text x="104" y="42" font-size="10" fill="#59636e">Oct</text>
 <text x="28" y="73" font-size="9" text-anchor="end" fill="#59636e">Mon</text>
 <text x="28" y="101" font-size="9" text-anchor="end" fill="#59636e">Wed</text>
 <text x="28" y="129" font-size="9" text-anchor="end" fill="#59636e">Fri</text>
-<rect x="34" y="64" width="11" height="11" rx="2" fill="#eff2f5"><title>Aug 24, 2026: 0 contributions</title></rect>
 <rect x="34" y="78" width="11" height="11" rx="2" fill="#eff2f5"><title>Aug 25, 2026: 0 contributions</title></rect>
 <rect x="34" y="92" width="11" height="11" rx="2" fill="#eff2f5"><title>Aug 26, 2026: 0 contributions</title></rect>
 <rect x="34" y="106" width="11" height="11" rx="2" fill="#eff2f5"><title>Aug 27, 2026: 0 contributions</title></rect>
@@ -67,15 +66,16 @@
 <rect x="146" y="50" width="11" height="11" rx="2" fill="#eff2f5"><title>Oct 18, 2026: 0 contributions</title></rect>
 <rect x="146" y="64" width="11" height="11" rx="2" fill="#116329"><title>Oct 19, 2026: 19 contributions</title></rect>
 <rect x="146" y="78" width="11" height="11" rx="2" fill="#eff2f5"><title>Oct 20, 2026: 0 contributions</title></rect>
-<rect x="146" y="92" width="11" height="11" rx="2" fill="#116329"><title>Oct 21, 2026: 7 contributions</title></rect>
+<rect x="146" y="92" width="11" height="11" rx="2" fill="#4ac26b"><title>Oct 21, 2026: 7 contributions</title></rect>
 <rect x="146" y="106" width="11" height="11" rx="2" fill="#aceebb"><title>Oct 22, 2026: 1 contribution</title></rect>
-<rect x="146" y="120" width="11" height="11" rx="2" fill="#2da44e"><title>Oct 23, 2026: 5 contributions</title></rect>
-<rect x="146" y="134" width="11" height="11" rx="2" fill="#116329"><title>Oct 24, 2026: 14 contributions</title></rect>
-<text x="84" y="169" font-size="9" text-anchor="end" fill="#59636e">Less</text>
-<rect x="90" y="160" width="11" height="11" rx="2" fill="#eff2f5"/>
-<rect x="104" y="160" width="11" height="11" rx="2" fill="#aceebb"/>
-<rect x="118" y="160" width="11" height="11" rx="2" fill="#4ac26b"/>
-<rect x="132" y="160" width="11" height="11" rx="2" fill="#2da44e"/>
-<rect x="146" y="160" width="11" height="11" rx="2" fill="#116329"/>
-<text x="162" y="169" font-size="9" fill="#59636e">More</text>
+<rect x="146" y="120" width="11" height="11" rx="2" fill="#4ac26b"><title>Oct 23, 2026: 5 contributions</title></rect>
+<rect x="146" y="134" width="11" height="11" rx="2" fill="#116329"><title>Oct 24, 2026: 34 contributions</title></rect>
+<rect x="160" y="50" width="11" height="11" rx="2" fill="#aceebb"><title>Oct 25, 2026: 1 contribution</title></rect>
+<text x="98" y="169" font-size="9" text-anchor="end" fill="#59636e">Less</text>
+<rect x="104" y="160" width="11" height="11" rx="2" fill="#eff2f5"/>
+<rect x="118" y="160" width="11" height="11" rx="2" fill="#aceebb"/>
+<rect x="132" y="160" width="11" height="11" rx="2" fill="#4ac26b"/>
+<rect x="146" y="160" width="11" height="11" rx="2" fill="#2da44e"/>
+<rect x="160" y="160" width="11" height="11" rx="2" fill="#116329"/>
+<text x="176" y="169" font-size="9" fill="#59636e">More</text>
 </g></svg>
