@@ -25,15 +25,6 @@ Senior AI Engineer building **agentic workflows**: LLM-powered agents that plan,
 
 Python · Claude / Anthropic API · MCP (Model Context Protocol) · PyTorch · TensorFlow · scikit-learn · pandas · FastAPI · AWS
 
-### Recent activity
-
-<!-- contributions:start -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/contributions-dark.svg">
-  <img alt="GitHub contributions chart: 99 contributions in the last 2 months (Aug 29, 2026 to Oct 29, 2026)" src="assets/contributions-light.svg">
-</picture>
-<!-- contributions:end -->
-
 ### Connect
 
 [LinkedIn](https://www.linkedin.com/in/edwardmitby)
